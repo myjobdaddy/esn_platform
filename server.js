@@ -38,7 +38,7 @@ app.post('/contact', async (req, res) => {
       },
       body: JSON.stringify({
         sender: { name: 'ESN Contact Form', email: 'info@equitysolutionsnetwork.com' },
-        to: [{ email: 'info@equitysolutionsnetwork.com', name: 'Equity Solutions Network' }],
+        to: [{ email: 'mckay.tyson@gmail.com', name: 'Equity Solutions Network' }],
         replyTo: { email, name },
         subject: `[ESN Inquiry] ${interestLabel} — ${name}`,
         htmlContent: `
