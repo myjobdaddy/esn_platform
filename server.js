@@ -37,7 +37,7 @@ app.post('/contact', async (req, res) => {
         'api-key': process.env.BREVO_API_KEY,
       },
       body: JSON.stringify({
-        sender: { name: 'ESN Contact Form', email: 'noreply@equitysolutionsnetwork.com' },
+        sender: { name: 'ESN Contact Form', email: 'info@equitysolutionsnetwork.com' },
         to: [{ email: 'info@equitysolutionsnetwork.com', name: 'Equity Solutions Network' }],
         replyTo: { email, name },
         subject: `[ESN Inquiry] ${interestLabel} — ${name}`,
