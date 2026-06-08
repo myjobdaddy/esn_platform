@@ -909,7 +909,12 @@
   <section id="about">
     <div class="about-inner">
       <div class="about-photo-wrap reveal">
-        <img src="/images/headshot.jpg" alt="Founder, Equity Solutions Network" class="about-photo" />
+        <div class="about-photo-placeholder">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="24" r="12" stroke="#8a9bbf" stroke-width="1.5"/>
+            <path d="M8 56c0-13.255 10.745-24 24-24s24 10.745 24 24" stroke="#8a9bbf" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <p>Headshot Coming Soon</p>
         </div>
         <div class="about-accent"></div>
       </div>
@@ -1093,8 +1098,14 @@
           <label for="message">Message</label>
           <textarea id="message" name="message" placeholder="Tell us about your organization and what you're trying to solve…"></textarea>
         </div>
+        <div class="form-group" style="flex-direction:row;align-items:flex-start;gap:12px;margin-top:4px;">
+          <input type="checkbox" id="optin" name="optin" style="width:16px;height:16px;margin-top:3px;accent-color:var(--teal);flex-shrink:0;cursor:pointer;" />
+          <label for="optin" style="font-size:0.85rem;color:var(--muted);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;line-height:1.5;">
+            Yes, I'd like to receive occasional updates on AI governance, IT strategy, and ESN services.
+          </label>
+        </div>
         <div class="form-submit">
-          <span class="form-note">Replies within 1 business day · Phoenix, AZ</span>
+          <span class="form-note">By submitting you agree to our <a href="/privacy.html" style="color:var(--teal);text-decoration:none;">Privacy Policy</a> · Phoenix, AZ</span>
           <button type="submit" class="btn-primary">Send Message →</button>
         </div>
         <div class="form-status" id="formStatus">✓ Message sent — we'll be in touch shortly.</div>
@@ -1113,6 +1124,7 @@
       <li><a href="#services-wrap">Services</a></li>
       <li><a href="#why">Why ESN</a></li>
       <li><a href="https://myjobdaddy.com" target="_blank">MyJobDaddy</a></li>
+      <li><a href="/privacy.html">Privacy</a></li>
       <li><a href="#contact-wrap">Contact</a></li>
     </ul>
     <div class="footer-right">
