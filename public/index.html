@@ -1104,7 +1104,14 @@
           <textarea id="message" name="message" placeholder="Tell us about your organization and what you're trying to solve…"></textarea>
         </div>
         <div class="form-group" style="flex-direction:row;align-items:flex-start;gap:12px;margin-top:4px;">
-          <input type="checkbox" id="optin" name="optin" style="width:16px;height:16px;margin-top:3px;accent-color:var(--teal);flex-shrink:0;cursor:pointer;" />
+          <div style="position:relative;width:18px;height:18px;flex-shrink:0;margin-top:2px;">
+            <input type="checkbox" id="optin" name="optin" style="position:absolute;opacity:0;width:18px;height:18px;margin:0;cursor:pointer;z-index:1;" />
+            <div id="optinBox" style="width:18px;height:18px;border:1.5px solid rgba(138,155,191,0.4);background:var(--navy-light);display:flex;align-items:center;justify-content:center;transition:all 0.2s;pointer-events:none;">
+              <svg id="optinCheck" width="11" height="9" viewBox="0 0 11 9" fill="none" style="display:none;">
+                <path d="M1 4L4 7.5L10 1" stroke="#0a0f1e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
           <label for="optin" style="font-size:0.85rem;color:var(--muted);font-family:var(--font-body);text-transform:none;letter-spacing:0;cursor:pointer;line-height:1.5;">
             Yes, I'd like to receive occasional updates on AI governance, IT strategy, and ESN services.
           </label>
@@ -1140,6 +1147,22 @@
   </footer>
 
   <script>
+    // ─── CHECKBOX STYLING ───
+    const optinInput = document.getElementById('optin');
+    const optinBox = document.getElementById('optinBox');
+    const optinCheck = document.getElementById('optinCheck');
+    optinInput.addEventListener('change', function() {
+      if (this.checked) {
+        optinBox.style.background = 'var(--teal)';
+        optinBox.style.borderColor = 'var(--teal)';
+        optinCheck.style.display = 'block';
+      } else {
+        optinBox.style.background = 'var(--navy-light)';
+        optinBox.style.borderColor = 'rgba(138,155,191,0.4)';
+        optinCheck.style.display = 'none';
+      }
+    });
+
     // ─── SCROLL REVEAL ───
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
